@@ -1,10 +1,65 @@
-<form>
-    <label for="manchu">輸入滿語</label><br>
-    <input type="text" id="manchu" name="manchu"><br>
-    <label for="ipa">國際音標</label><br>
-    <input type="text" id="ipa" name="ipa"><br>
-    <button type="button" id="sub">轉換</button>
-</form>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Anaheim' rel='stylesheet'>
+    <style>
+        
+        img.center {
+                margin-top: 50px;
+                display:block;
+                margin-left:auto;
+                margin-right:auto
+            }
+
+        div.f {
+                margin-top: 35px;
+                margin-left:auto;
+                margin-right:auto;
+                text-align:center;
+                font-family:"Anaheim";
+            }
+
+        div.j {
+            display: inline-block;
+            margin-left: 0px;
+            text-align: left;
+        }
+
+        div.x {
+            display: inline-block;
+            margin-left: 125px;
+            text-align: left;
+        }
+
+        button {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            font-weight: bold
+        }
+    </style>
+</head>
+<img src="logo.jpg" class="center">
+<div class = "f">
+    <form>
+        <h2>滿文轉寫</h2>
+        <textarea id="manchu" rows="12" cols="150" name="manchu"></textarea><br>
+        <h2>國際音標</h2>
+        <textarea id="ipa" rows="12" cols="150" name="ipa"></textarea><br><br><br>
+        <button type="button" id="sub">轉換</button><br><br>
+    </form>
+    <br>
+    <br>
+    <div class="j">
+        <p style="font-size:25px"><b>Jacob Kodner (柯雅各)</b></p>
+        <h3 class="b">Undergraduate | Department of Language Science</h3>
+        <h3 class="b">University of California, Irvine</h3>
+    </div>
+
+    <div class="x">
+        <p style="font-size:25px"><b>Xi Li Dan (錫利丹)</b></p>
+        <h3 class="b">Sebsihiyan Amban | Manchu-Sibe Culture Center</h3>
+        <h3 class="b">Shenyang, China</h3>
+    </div>
+</div>
 
 
 <script>
