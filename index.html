@@ -94,7 +94,7 @@
     "wo": "ʷɜ",
     "ui": "uj",
     "yaw": "QY",
-    "yew": "ʲɜw",
+    "yew": "QY",
     "ywa": "QY",
     "yoe": "QY",
     "w": "ʷ",
@@ -122,7 +122,7 @@
     "r": "r",
     "l": "l",  
     "m": "m",
-    "n": "n",
+    "n": "QY",
     "ŋ": "ŋ",
     "N": "ŋ",
     "dz": "ts",  
@@ -139,7 +139,7 @@
         "everyw_else": "s"
     },
     "c": {
-        "i_rule": "tʃ",
+        "i_rule": "tɕ",
         "everyw_else": "ʈʂ"
     },
     "j": {
@@ -276,7 +276,7 @@
                             count += 2;
                         }
                         else if ((['s', 'c', 'j', 'z'].indexOf(letter) >= 0)) {
-                            if (look(letters_list, count, 1) == 'i') {
+                            if (look(letters_list, count, 1) == 'i' || ((letter == "c") & (next_letter == "y"))) {
                                 var ipa_letter = rules_key[letter]["i_rule"];
                                 count += 1;
                             }
@@ -294,6 +294,16 @@
                             }
                             count += 1
                         }
+
+                        else if (letter == "n") {
+                            if (Object.values(vowels).indexOf(next_letter) >= 0) {
+                                var ipa_letter = "n";
+                            }
+                            else {
+                                var ipa_letter = "ɴ";
+                            }
+                            count += 1
+                        }
                         else if ((Object.keys(key).indexOf(letter)>= 0)) {
                             var ipa_letter = key[letter];
                             count += 1;
@@ -305,11 +315,11 @@
                     }
                     else if ((Object.values(vowels).indexOf(letter)>= 0)) {
                         if (nnext_combo == "yew") {
-                            if (last_letter == 'NONE' || last_letter == ' ') {
-                                var ipa_letter = "jɜw";
+                            if (last_letter == 'NONE' || last_letter == ' ' || (Object.keys(key).indexOf(last_letter) < 0)) {
+                                var ipa_letter = "jəw";
                             }
                             else {
-                                var ipa_letter = "ʲɜw";
+                                var ipa_letter = "ʲəw";
                             }
                             count += 3;
                         }     
