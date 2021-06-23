@@ -308,6 +308,7 @@
                             var ipa_letter = key[letter];
                             count += 1;
                         }
+                        
                         else {
                             var ipa_letter = letter;
                             count += 1;
@@ -351,6 +352,15 @@
                                             var ipa_letter = qy_key[next_combo]["everyw_else"];
                                         }
                                         count += 2;
+                                    }
+                                    else if (letter == "y") {
+                                        if ((Object.values(cons).indexOf(last_letter)>= 0)) {
+                                        var ipa_letter = qy_key["y"]["cons_rule"];
+                                        }
+                                        else {
+                                            var ipa_letter = qy_key["y"]["everyw_else"];
+                                        }
+                                        count += 1;
                                     }
                                     else if ((Object.keys(key).indexOf(letter)>= 0)) {
                                         var ipa_letter = key[letter];
